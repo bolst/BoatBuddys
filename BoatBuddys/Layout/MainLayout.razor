@@ -1,0 +1,64 @@
+﻿@inherits LayoutComponentBase
+
+@inject NavigationManager Navigation
+
+<MudThemeProvider Theme="_theme" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Class="d-flex align-center justify-center" Elevation="2">
+
+        <MudImage Class="mr-8 cursor-pointer pa-1 pa-md-0" @onclick="@(_ => Navigation.NavigateTo("/"))" Src="logo.jpg" Height="60" />
+
+        <div class="">
+            <MudButton Color="Color.Primary" Href="/services" Variant="Variant.Text" Size="Size.Large">SERVICES</MudButton>
+            <MudButton Color="Color.Primary" Href="/gallery" Variant="Variant.Text" Size="Size.Large">GALLERY
+            </MudButton>
+        </div>
+
+        <MudSpacer/>
+
+        <div class="d-block d-md-none">
+            @* <NavDrawer/> *@
+        </div>
+    </MudAppBar>
+    <MudMainContent>
+        <div class="pa-4">
+            @Body
+        </div>
+    </MudMainContent>
+    <MudAppBar Class="d-flex align-center justify-center" Color="Color.Secondary" Elevation="2" Fixed="false" Bottom Dense>
+        <MudLink Class="mr-2" Href="https://instagram.com/belleriverboatbuddys" Target="_blank">
+            <MudIcon Icon="@Icons.Custom.Brands.Instagram" Color="Color.Tertiary" />
+        </MudLink>
+        
+        <MudLink Class="ml-2" Href="https://facebook.com/belleriverboatbuddys" Target="_blank">
+            <MudIcon Icon="@Icons.Custom.Brands.Facebook" Color="Color.Tertiary" />
+        </MudLink>
+    </MudAppBar>
+</MudLayout>
+
+
+@code {
+
+    private readonly PaletteLight _paletteLight = new()
+    {
+        Primary = "#335EF4",
+        Secondary = "#020360",
+        Tertiary = "#E4392C",
+        AppbarBackground = "#ffffff"
+    };
+    
+    private MudTheme? _theme = null;
+
+    protected override void OnInitialized()
+    {
+        _theme = new()
+        {
+            PaletteLight = _paletteLight
+        };
+    }
+
+}

@@ -1,0 +1,40 @@
+@page "/gallery"
+
+<PageTitle>Gallery</PageTitle>
+
+
+<div class="d-flex align-center flex-column">
+    <MudText Typo="Typo.h2" Align="Align.Center">Gallery</MudText>
+    <MudDivider Class="my-4" />
+</div>
+
+
+<MudCarousel TData="object" Class="mud-width-full" Style="height:600px;" ShowArrows ShowBullets EnableSwipeGesture AutoCycle>
+    @foreach (var src in _imageLinks)
+    {
+        <MudCarouselItem Class="d-flex justify-center" Transition="Transition.Fade">
+            <MudImage Src="@src" Height="550"/>
+        </MudCarouselItem>
+    }
+    @foreach (var (src1, src2) in _pairLinks)
+    {
+        <MudCarouselItem Class="d-flex justify-center" Transition="Transition.Fade">
+            <MudImage Src="@src1" Height="550"/>
+            <MudImage Src="@src2" Height="550"/>
+        </MudCarouselItem>
+    }
+</MudCarousel>
+
+
+@code {
+
+    private IEnumerable<string> _imageLinks = [];
+    private IEnumerable<(string, string)> _pairLinks = [];
+
+    protected override void OnInitialized()
+    {
+        _pairLinks = Enumerable.Range(1, 3).Select(x => ($"../assets/p{x}1.jpg", $"../assets/p{x}2.jpg"));
+        _imageLinks = Enumerable.Range(57, 20).Select(x => $"../assets/e{x}.jpg");
+    }
+
+}

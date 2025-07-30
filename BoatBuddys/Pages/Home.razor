@@ -1,0 +1,88 @@
+﻿@page "/"
+
+<PageTitle>BR Boat Buddy's</PageTitle>
+
+<div class="d-flex align-center flex-column">
+    <MudImage Class="pt-2" Src="logo.jpg" Height="100" />
+    <MudText Typo="Typo.h2" Align="Align.Center">Windsor-Essex's Premier Boat Cleaners</MudText>
+    <MudDivider Class="my-4" />
+</div>
+
+<MudCarousel TData="object" Class="mud-width-full" Style="height:600px;" ShowArrows ShowBullets EnableSwipeGesture AutoCycle>
+    @foreach (var carouselItem in _carouselItems)
+    {
+        <MudCarouselItem Transition="Transition.Fade">
+            <div class="pa-4 d-flex align-center" style="@($"background-size: cover; background-position: center center; height:100%; background-image: url(\"{carouselItem.ImageUrl}\")")">
+                    <div style="width: 100%; max-width: 450px">
+                        <div class="d-flex flex-column pa-6 justify-space-between" style="height: 350px; background-color: #000000dd">
+                            <MudText Typo="Typo.h4" Style="color: white">@carouselItem.Title</MudText>
+                            <MudText Typo="Typo.body1" Style="color: white">@carouselItem.Description</MudText>
+                        </div>
+                    </div>
+            </div>
+        </MudCarouselItem>
+    }
+</MudCarousel>
+
+
+<DarkBackground Src="../assets/boat4.jpg" Class="d-flex flex-column align-center my-4 pa-4" Fixed Light>
+    <div class="d-flex flex-column align-center pa-4 gap-5" style="width: 100%">
+        <MudText Typo="Typo.h3" Style="color: black" Align="Align.Center"><b>Buffing</b></MudText>
+        <MudText Typo="Typo.h3" Style="color: black" Align="Align.Center"><b>Weekly & Biweekly Cleans</b></MudText>
+        <MudText Typo="Typo.h3" Style="color: black" Align="Align.Center"><b>Bottom Paint</b></MudText>
+    </div>
+
+    <MudButton Color="Color.Error"
+               Size="Size.Large"
+               Variant="Variant.Filled"
+               Href="/services">Learn more about what we offer
+    </MudButton>
+</DarkBackground>
+
+
+<MudPaper Class="pa-4 d-flex flex-column align-center gap-5">
+    <MudText Typo="Typo.h4" Color="Color.Tertiary" Align="Align.Center"><b>Get quoted today!</b></MudText>
+    <MudText Typo="Typo.h4" Color="Color.Tertiary" Align="Align.Center"><b>Send us a message at (226) 344-6345</b></MudText>
+</MudPaper>
+
+
+
+@code {
+
+    private IEnumerable<CarouselItem> _carouselItems = [];
+
+    protected override void OnInitialized()
+    {
+        _carouselItems =
+        [
+            new CarouselItem
+            {
+                Title = "Customized Cleaning Plans",
+                Description = "Tailored to meet your unique needs, our customized cleaning plans offer flexibility and convenience. Whether you prefer a weekly, biweekly, or personalized cleaning schedule, we work closely with you to create a plan that fits your boat's maintenance requirements and your busy lifestyle.",
+                ImageUrl = "../assets/boat2.jpg",
+            },
+            new CarouselItem
+            {
+                Title = "Eco-Friendly Cleaning Products",
+                Description = "We prioritize environmental sustainability by using eco-friendly cleaning products. Our commitment to green practices ensures a thorough and effective cleaning process without harming the delicate marine ecosystem. Rest assured, your boat will shine brilliantly while minimizing any adverse impact on the environment.",
+                ImageUrl = "../assets/boat.jpg",
+            },
+            new CarouselItem
+            {
+                Title = "Consultations and Recommendations",
+                Description = "Our experienced team doesn't just clean your boat; we provide valuable insights and recommendations. Benefit from our expertise with detailed consultations on maintenance strategies, product recommendations, and preventive measures to keep your vessel in top-notch condition. We're committed to ensuring your boat stays pristine for years to come.",
+                ImageUrl = "../assets/boat3.jpg",
+            }
+        ];
+    }
+    
+    
+
+    private record CarouselItem
+    {
+        public string Title { get; init; }
+        public string Description { get; init; }
+        public string ImageUrl { get; init; }
+    }
+
+}
