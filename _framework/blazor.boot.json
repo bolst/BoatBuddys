@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BoatBuddys",
   "resources": {
-    "hash": "sha256-S2QQZ6rUyIZeMHjhA/V8umvaqEVY5A5HYat1Ik7ih3M=",
+    "hash": "sha256-/YYMpNcQ3/3RaLhDanoePd53QlI27hCqgWD6V1X37Yc=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.05qs5urisj.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.qqvmyb7bjg.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -38,7 +38,7 @@
       "System.Text.Json.buknhzl991.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.3zsgj0cg1v.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.q1s82nors8.wasm": "System.Private.CoreLib.wasm",
-      "BoatBuddys.42vg9j5ult.wasm": "BoatBuddys.wasm",
+      "BoatBuddys.010jbko3s9.wasm": "BoatBuddys.wasm",
       "dotnet.native.fpn4x653o1.js": "dotnet.native.js",
       "dotnet.native.waphiiujjc.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
@@ -99,7 +99,7 @@
       "System.Text.Encodings.Web.q7l6i2z1r3.wasm": "sha256-5roL5hgDxtpOyji6xusmx3evKf+54YuFbIJpejfq0XQ=",
       "System.Text.Json.buknhzl991.wasm": "sha256-vYlN0SfOmv7SPfxDhfvOb3kHzCSyNuGycQYXtwjVgho=",
       "System.Text.RegularExpressions.3zsgj0cg1v.wasm": "sha256-r6m4tiB1/BE8y9Z0gQYldxZ9EfNMRF2BCF+SvQgrZzw=",
-      "BoatBuddys.42vg9j5ult.wasm": "sha256-PKZMeH0L0mtKU0yiXpZxquJPLzEGdUtt/YryhCNYxrQ="
+      "BoatBuddys.010jbko3s9.wasm": "sha256-5IGwNjQCSDVQZ2H+3w5hX71F/J00PdzBmQIoRarW44Q="
     }
   },
   "cacheBootResources": true,
